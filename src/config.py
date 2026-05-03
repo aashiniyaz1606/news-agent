@@ -34,7 +34,7 @@ SEARCH_QUERIES: list[str] = [
 ]
 
 # Maximum results per query from Tavily
-MAX_RESULTS_PER_QUERY: int = 10
+MAX_RESULTS_PER_QUERY: int = 20
 
 # Time range filter for Tavily ("day", "week", "month", "year")
 SEARCH_TIME_RANGE: str = "week"

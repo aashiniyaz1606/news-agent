@@ -60,7 +60,10 @@ class NewsAgent:
             logger.error("No search results found. Aborting.")
             return []
 
-        logger.info("Found %d unique search results", len(search_results))
+        # Limit to 30 for scraping to save time
+        search_results = search_results[:30]
+
+        logger.info("Selected %d search results to scrape", len(search_results))
 
         # ── Step 3: Scrape ───────────────────────────────────────────
         logger.info("Step 3: Scraping full article content...")
@@ -117,6 +120,12 @@ class NewsAgent:
         now = datetime.now(timezone.utc).isoformat()
 
         for article in scraped_articles:
+            if not article.published_date:
+                continue
+
+            if len(processed) >= 20:
+                break
+
             images = []
             if article.top_image:
                 images.append(article.top_image)

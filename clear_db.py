@@ -27,11 +27,7 @@ async def clear_database():
                 logger.info("Database is already empty.")
                 return
 
-            # Ask for confirmation
-            response = input(f"Are you sure you want to delete all {count} articles from {DB_PATH}? (y/n): ")
-            if response.lower() != 'y':
-                logger.info("Operation cancelled.")
-                return
+            # No confirmation prompt needed for dashboard usage
 
             # Clear the table
             await db.execute("DELETE FROM articles")

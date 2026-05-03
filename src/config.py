@@ -37,7 +37,7 @@ SEARCH_QUERIES: list[str] = [
 MAX_RESULTS_PER_QUERY: int = 20
 
 # Time range filter for Tavily ("day", "week", "month", "year")
-SEARCH_TIME_RANGE: str = "week"
+SEARCH_TIME_RANGE: str = "day"
 
 # Minimum total unique articles to collect
 MIN_ARTICLES: int = 10

@@ -46,6 +46,7 @@ class NewsSearcher:
                 time_range=SEARCH_TIME_RANGE,
                 max_results=MAX_RESULTS_PER_QUERY,
                 include_raw_content=True,
+                include_domains=TRUSTED_DOMAINS,
             )
             results = response.get("results", [])
             logger.info("  → Found %d results for: '%s'", len(results), query)

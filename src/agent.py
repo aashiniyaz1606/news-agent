@@ -130,15 +130,10 @@ class NewsAgent:
             if article.top_image:
                 images.append(article.top_image)
 
-            # Generate a summary by extracting the first 500 characters
-            text_preview = article.full_text[:500]
-            if len(article.full_text) > 500:
-                text_preview += "..."
-
             try:
                 pa = ProcessedArticle(
                     title=article.title,
-                    content_summary=text_preview,
+                    content_summary=article.full_text,
                     link=article.url,
                     images_links=images,
                     published_date=article.published_date,

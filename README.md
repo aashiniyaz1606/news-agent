@@ -102,3 +102,11 @@ Key settings in `src/config.py`:
 ## License
 
 MIT
+
+
+## To run the frontend
+
+```bash
+source venv/Scripts/activate
+streamlit run app.py 
+```
